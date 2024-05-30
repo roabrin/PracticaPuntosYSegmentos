@@ -1,0 +1,67 @@
+package Clases;
+
+
+
+/**
+ * Clase Punto para representar un punto en un plano de coordenadas.
+ * Los puntos tienen dos propiedades: una coordenada 'x' y una coordenada 'y'.
+ */
+public class Punto {
+    
+    private int x;
+    private int y;
+
+    /**
+     * Constructor por defecto.
+     * Crea un punto en las coordenadas (0,0).
+     */
+    public Punto() {
+        this.x = 0;
+        this.y = 0;
+    }
+
+    /**
+     * Constructor que recibe dos enteros como parámetros.
+     * Crea un punto en las coordenadas pasadas como parámetros.
+     *
+     * @param x Coordenada x del punto.
+     * @param y Coordenada y del punto.
+     */
+    public Punto(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    /**
+     * 
+     * Aqui realizamos los Get y los Setter
+     */
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    /**
+     * Método toString.
+     * 
+     * 
+     *
+     * @return Una cadena que representa el punto en el formato (x,y).
+     */
+    @Override
+    public String toString() {
+        return "(" + x + "," + y + ")";
+    }
+}
+

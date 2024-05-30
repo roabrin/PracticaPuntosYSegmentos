@@ -1,0 +1,78 @@
+package Clases;
+
+
+package clases;
+
+/**
+ * Clase Segmento para representar un segmento en un plano de coordenadas.
+ * Los segmentos tienen dos propiedades: un punto 'a' y un punto 'b'.
+ */
+public class Segmento {
+    
+    private Punto a;
+    private Punto b;
+
+    /**
+     * Constructor por defecto.
+     * Crea un segmento entre los puntos (0,0) y (1,1).
+     */
+    public Segmento() {
+        this.a = new Punto();
+        this.b = new Punto(1, 1);
+    }
+
+    /**
+     * Constructor que recibe dos puntos como parámetros.
+     * Crea un segmento entre los puntos pasados como parámetros.
+     *
+     * @param a Punto a del segmento.
+     * @param b Punto b del segmento.
+     */
+    public Segmento(Punto a, Punto b) {
+        this.a = a;
+        this.b = b;
+    }
+
+    // Getters y Setters
+    public Punto getA() {
+        return a;
+    }
+
+    public void setA(Punto a) {
+        this.a = a;
+    }
+
+    public Punto getB() {
+        return b;
+    }
+
+    public void setB(Punto b) {
+        this.b = b;
+    }
+
+    /**
+     * Método toString para representar el segmento.
+     * Si tenemos un segmento con los puntos (1,2) y (3,4),
+     * se mostrará [(1,2),(3,4)].
+     *
+     * @return Una cadena que representa el segmento en el formato [(a),(b)].
+     */
+    @Override
+    public String toString() {
+        return "[" + a + "," + b + "]";
+    }
+
+    /**
+     * Método para calcular la distancia entre ambos puntos.
+     * La fórmula para calcular la distancia es la raíz cuadrada de ((x2-x1)^2 + (y2-y1)^2),
+     * donde 'x2' es la coordenada 'x' del segundo punto, 'x1' la coordenada 'x' del primer punto;
+     * 'y2' es la coordenada 'y' del segundo punto y 'y1' es la coordenada 'y' del primer punto.
+     *
+     * @return La distancia entre los puntos 'a' y 'b'.
+     */
+    public double distancia() {
+        int dx = b.getX() - a.getX();
+        int dy = b.getY() - a.getY();
+        return Math.sqrt(dx * dx + dy * dy);
+    }
+}
